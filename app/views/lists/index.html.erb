@@ -26,6 +26,15 @@
       <tr>
         <td>トラブル知らずのシステム設計</td>
         <td>システム設計の要点を図解で説明してくれます</td>
+
+
+        <% @books.each do |list| %>
+        <p>Show</p>
+        <span>
+          <%= link_to list.title, "/books/#{list.id}" %>
+        </span>
+
+
       </tr>
       <tr>
         <td><たのしいRuby</td>
@@ -67,4 +76,4 @@
 <% end %>
 
 </body>
-<html>
+</html>
