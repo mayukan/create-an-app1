@@ -11,8 +11,8 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(book_params)
-    @book.save
+    book = Book.new(book_params)
+    book.save
     redirect_to '/top'
   end
 
