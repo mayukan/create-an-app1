@@ -20,17 +20,17 @@
         <td>システム設計の要点を図解で説明してくれます</td>
 
 
-        <% @books.each do |list| %>
+        <% @books.each do |book| %>
         <p>Show</p>
         <span>
-          <%= link_to list.title, "/books/#{list.id}" %>
+          <%= link_to book.title, "/books/#{book.id}" %>
         </span>
         <% end %>
 
 
       </tr>
       <tr>
-        <td><たのしいRuby</td>
+        <td>たのしいRuby</td>
         <td>Rubyの入門におすすめです</td>
         </tr>
        <tr>
