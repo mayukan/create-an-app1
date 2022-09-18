@@ -18,6 +18,7 @@
         <td><%= link_to "Show", book_path(book.id) %></td>
         <td><%= link_to "Edit", edit_book_path(book.id) %></td>
         <td><%= link_to "Destroy", "/books/#{book.id}", method: :delete %></td>
+        <!-- 削除機能のコメントを入れる‼︎‼-->
          </tr>
         <% end %>
     </tbody>
