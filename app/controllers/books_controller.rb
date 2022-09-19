@@ -13,9 +13,15 @@ class BooksController < ApplicationController
 
   def create
     book = Book.new(book_params)
-    book.save
+
+    if book.save
+      flash[:notice] = 'Book was successfully created.'
     redirect_to "/books/#{book.id}"
+  else
+    flash[:alret] = "投稿に失敗しました。"
+    render "index"
   end
+end
 
   def show
     @book = Book.find(params[:id])

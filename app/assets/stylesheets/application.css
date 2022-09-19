@@ -87,3 +87,7 @@ label{
     display: block;
     cursor: default;
 }
+
+#notice {
+    color: green;
+}
