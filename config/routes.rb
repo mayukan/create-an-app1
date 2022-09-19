@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 #  get 'books/top'
 #  get '/top' => 'homes#top'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'homes#top'
   patch 'books/:id' => 'books#update', as: 'update_book'
-  get '/top' => 'homes#top'
+  # patch 'books/:id' => 'books#update', as: 'update_book'
   resources :books
 end
