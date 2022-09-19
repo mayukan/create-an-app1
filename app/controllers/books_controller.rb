@@ -12,14 +12,14 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = Book.new(book_params)
+    @book = Book.new(book_params)
 
-    if book.save
+    if @book.save
       flash[:notice] = 'Book was successfully created.'
-    redirect_to "/books/#{book.id}"
+    redirect_to "/books/#{@book.id}"
   else
-    flash[:alret] = "投稿に失敗しました。"
-    render "index"
+    @books = Book.all
+    render :index
   end
 end
 
@@ -34,12 +34,19 @@ end
     def update
     book = Book.find(params[:id])
     book.update(book_params)
+
+    if book.save
+    flash[:notice] = 'Book was successfully created.'
+  else
+
+  end
     redirect_to book_path(book.id)
   end
 
   def destroy
     book = Book.find(params[:id])
     book.destroy
+    flash[:notice] = 'Book was successfully destroyed.'
     redirect_to '/books'
   end
 
